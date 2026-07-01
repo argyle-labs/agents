@@ -1,0 +1,51 @@
+[package]
+name = "agents"
+version = "0.1.0"
+edition = "2024"
+build = "build.rs"
+description = "Registers orca's base agent roster, slash-commands, and hooks as an AgentProvider"
+
+[package.metadata.orca]
+category = "agents"
+
+[lib]
+name = "agents"
+path = "src/lib.rs"
+# `cdylib` is the orca plugin artifact orca's `plugin-loader` `dlopen`s;
+# `rlib` retains the in-crate `#[cfg(test)]` harness + lets the workspace use it
+# as a normal Rust lib.
+crate-type = ["cdylib", "rlib"]
+
+# The agents plugin. A HYBRID tool plugin: it exposes the `agent.{list,get}`
+# tool surface AND registers a `domain = "agents"` AgentProvider backend that
+# feeds orca's composition registry (`contract::agents`). The provider is how
+# `orca install` and the internal chat roster obtain the base roster
+# (wolf/otter/…), the embedded slash-commands, and any hooks — orca core carries
+# no embedded fallback, so without this plugin loaded orca has no agents.
+
+[dependencies]
+# The SOLE orca dependency. Every external crate the plugin needs — serde,
+# serde_json, schemars, clap, anyhow, tokio — and every orca surface
+# (contract / db / the tool macros) is reached through `plugin_toolkit::*` / its
+# prelude. The plugin source names no external crate except `abi_stable` below.
+#
+# Pinned to the orca git source; the committed `[patch]` in `.cargo/config.toml`
+# resolves this to the local in-tree toolkit alongside a checked-out orca repo.
+plugin-toolkit = { git = "https://github.com/argyle-labs/orca", branch = "main", features = ["tools"] }
+
+# The ONE genuine non-orca dep: `#[export_root_module]` (invoked by
+# `export_tool_plugin!`) expands to bare `::abi_stable` paths in this crate's
+# root — the cdylib FFI boundary the loader dlopens — so it can't route through
+# the toolkit. Pinned to the orca workspace version so the layout hash baked into
+# the cdylib matches what orca's plugin-loader checks at load time.
+abi_stable = "0.11"
+
+[dev-dependencies]
+plugin-toolkit = { git = "https://github.com/argyle-labs/orca", branch = "main", features = ["tools"] }
+tempfile = "3"
+
+# Match orca's workspace lint floor: discarding a Result/Option via
+# `let _ = ...` stays a hard error so the plugin remains portable back into the
+# orca workspace.
+[lints.clippy]
+let_underscore_must_use = "deny"
