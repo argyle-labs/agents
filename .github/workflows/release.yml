@@ -26,9 +26,6 @@ on:
         required: false
         type: string
 
-# The reusable's release job needs a write token to create the GitHub Release;
-# a called workflow can't be granted more than the caller holds, and the repo
-# default is read-only. Grant it here (least privilege) or the run startup-fails.
 permissions:
   contents: write
 
