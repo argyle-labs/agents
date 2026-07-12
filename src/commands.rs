@@ -3,7 +3,7 @@
 //! `domain = "agents"` backend can hand them to `orca install`, which
 //! materializes `~/.claude/commands/<name>.md`.
 
-use plugin_toolkit::contract::agents::CommandDef;
+use crate::def::CommandDef;
 
 include!(concat!(env!("OUT_DIR"), "/embedded_commands.rs"));
 
@@ -32,7 +32,11 @@ mod tests {
     fn base_roster_commands_are_well_formed() {
         for cmd in base_roster_commands() {
             assert!(!cmd.name.is_empty(), "command name must not be empty");
-            assert!(!cmd.name.contains(' '), "whitespace in command: {}", cmd.name);
+            assert!(
+                !cmd.name.contains(' '),
+                "whitespace in command: {}",
+                cmd.name
+            );
             assert_eq!(cmd.origin, "embedded");
         }
     }

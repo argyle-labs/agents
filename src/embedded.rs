@@ -9,7 +9,7 @@
 // Generated at build time by build.rs — embeds agent .md files into the cdylib.
 include!(concat!(env!("OUT_DIR"), "/embedded_agents.rs"));
 
-use plugin_toolkit::contract::agents::AgentDef;
+use crate::def::AgentDef;
 use std::path::Path;
 
 /// The compiled-in base roster as `AgentDef`s (frontmatter intact in `body`,
