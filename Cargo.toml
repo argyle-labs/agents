@@ -41,10 +41,10 @@ path = "src/main.rs"
 # registration seam + the `agents.register` host handler (merged in orca #58).
 # Pinning a rev (not a bare branch) keeps CI reproducible and guarantees the
 # seam is present — a lock/pin at an older orca would fail to resolve the seam.
-plugin-toolkit = { git = "https://github.com/argyle-labs/orca", rev = "c997fdc003640a5fc609c1da41f53b0a24830d23", default-features = false, features = ["tools", "db"] }
+plugin-toolkit = { git = "https://github.com/argyle-labs/orca", rev = "51afa6991fc4bb7095b6f942a9648fdc1196f9f4", default-features = false, features = ["tools", "db"] }
 
 [dev-dependencies]
-plugin-toolkit = { git = "https://github.com/argyle-labs/orca", rev = "c997fdc003640a5fc609c1da41f53b0a24830d23", default-features = false, features = ["tools", "db"] }
+plugin-toolkit = { git = "https://github.com/argyle-labs/orca", rev = "51afa6991fc4bb7095b6f942a9648fdc1196f9f4", default-features = false, features = ["tools", "db"] }
 tempfile = "3"
 
 # Match orca's workspace lint floor: discarding a Result/Option via
