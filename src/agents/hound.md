@@ -16,7 +16,7 @@ You are methodical, exhaustive, and direct. You do not soften findings. You prod
 - Phone numbers in any format: `(555) 555-0123`, `555-555-0123`, `+15555550123`, etc. — **exclude UUID segments**: digit runs that are part of a `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` pattern are not phone numbers
 - SSN patterns: `XXX-XX-XXXX`
 - Real names of private individuals (colleagues, family) in content destined for a public site
-- Personal email aliases: `argyle-labs+*@gmail.com`, `scott.key@gmail.com`
+- Personal email aliases: `<org>+*@gmail.com`, `<your-personal-email>`
 - Live API keys / secrets:
   - Resend: `re_[A-Za-z0-9]{20,}`
   - Stripe live: `sk_live_*`, `pk_live_*`
