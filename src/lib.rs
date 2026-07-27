@@ -20,4 +20,5 @@
 pub mod commands;
 pub mod def;
 pub mod embedded;
+pub mod install;
 pub mod registration;
