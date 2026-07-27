@@ -30,7 +30,19 @@ permissions:
   contents: write
 
 jobs:
+  # Approval gate: blocks the release until a required reviewer approves the
+  # `release-<channel>` environment. The reusable workflow does not gate on its
+  # own, so we front it with this protected no-op job (mirrors orca's
+  # release-rc / release-stable environment protection).
+  gate:
+    name: Approve ${{ inputs.channel }} release
+    runs-on: ubuntu-latest
+    environment: release-${{ inputs.channel }}
+    steps:
+      - run: echo "Release approved for channel '${{ inputs.channel }}' (${{ inputs.bump }})."
+
   release:
+    needs: gate
     uses: argyle-labs/.github/.github/workflows/plugin-release.yml@main
     secrets: inherit
     with:
