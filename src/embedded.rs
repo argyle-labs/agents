@@ -6,7 +6,7 @@
 //! `domain = "agents"` backend ([`base_roster_agents`]) hands the full roster to
 //! orca's composition registry.
 
-// Generated at build time by build.rs — embeds agent .md files into the cdylib.
+// Generated at build time by build.rs — embeds agent .md files into the binary.
 include!(concat!(env!("OUT_DIR"), "/embedded_agents.rs"));
 
 use crate::def::AgentDef;
