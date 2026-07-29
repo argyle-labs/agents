@@ -7,9 +7,8 @@
 //! orca #58). Without this plugin loaded, orca has no agents to route to or
 //! materialize.
 //!
-//! It ships as a **dynamic subprocess plugin**: orca spawns the `[[bin]]`
-//! (`src/main.rs`) and speaks the UDS wire protocol to it. There is no dlopened
-//! cdylib anymore.
+//! It ships as a **subprocess plugin**: orca spawns the `[[bin]]`
+//! (`src/main.rs`) and speaks the UDS wire protocol to it over the orca socket.
 //!
 //! - [`embedded`] / [`commands`] — the compiled-in roster. The `.md` prompts
 //!   under `src/agents/` and `src/commands/` are embedded at build time by

@@ -11,10 +11,10 @@ category = "agents"
 [lib]
 name = "agents"
 path = "src/lib.rs"
-# `rlib` only — the plugin artifact is the `[[bin]]` below, a dynamic subprocess
-# orca's plugin-loader spawns and speaks the UDS wire protocol to. The retired
-# cdylib crate-type is gone; there is no dlopened artifact anymore (mirrors the
-# converted arr / dockge / ntfy subprocess plugins).
+# `rlib` only — the plugin artifact is the `[[bin]]` below, a subprocess orca's
+# plugin-loader spawns and speaks the UDS wire protocol to. No FFI: this plugin
+# talks to the orca daemon over its Unix socket via the serve macro from
+# plugin-toolkit (mirrors the arr / dockge / ntfy subprocess plugins).
 crate-type = ["rlib"]
 
 # The subprocess plugin entrypoint. orca's boot-time scan spawns this binary and
@@ -32,7 +32,7 @@ path = "src/main.rs"
 # and the `serve_tool_plugin!` subprocess boot macro — is reached through it.
 #
 # THIN (out-of-process) profile: `default-features = false` sheds the in-process
-# tokio reactor and the cdylib export glue. `tools` gives the `#[orca_tool]` /
+# tokio reactor. `tools` gives the `#[orca_tool]` /
 # dispatch surface + the reactor-free `serve.rs` socket loop; `db` is the loop's
 # other gate (`serve` / `serve_macros` are `#[cfg(all(feature = "tools", feature
 # = "db"))]`). No tokio/futures/chrono/serde are named directly.
