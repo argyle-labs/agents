@@ -24,7 +24,7 @@ fn default_claude_dir() -> String {
         .unwrap_or_else(|_| ".claude".to_string())
 }
 
-#[plugin_struct(args)]
+#[orca_struct(args)]
 pub struct InstallArgs {
     /// Claude config dir to materialize into (default `$HOME/.claude`). Agents
     /// are written under `<dir>/agents/`, slash-commands under `<dir>/commands/`.
@@ -33,7 +33,7 @@ pub struct InstallArgs {
     pub dir: Option<String>,
 }
 
-#[plugin_struct]
+#[orca_struct]
 pub struct InstallResult {
     /// Absolute dir the roster was materialized under.
     pub dir: String,
