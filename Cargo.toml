@@ -41,10 +41,10 @@ path = "src/main.rs"
 # `plugin_toolkit::agents` registration seam + the `agents.register` host
 # handler. CI and local builds both re-resolve `main` fresh, so this plugin
 # always compiles against the latest orca contract.
-plugin-toolkit = { git = "https://github.com/argyle-labs/orca", branch = "main", default-features = false, features = ["tools", "db"] }
+plugin-toolkit = { git = "https://github.com/argyle-labs/orca", tag = "v0.1.7-rc.1", default-features = false, features = ["tools", "db"] }
 
 [dev-dependencies]
-plugin-toolkit = { git = "https://github.com/argyle-labs/orca", branch = "main", default-features = false, features = ["tools", "db"] }
+plugin-toolkit = { git = "https://github.com/argyle-labs/orca", tag = "v0.1.7-rc.1", default-features = false, features = ["tools", "db"] }
 tempfile = "3"
 
 # Match orca's workspace lint floor: discarding a Result/Option via
