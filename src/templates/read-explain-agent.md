@@ -7,7 +7,7 @@ description: Template for agents that read sources (code, docs, plans, external 
 
 Use this template when building an agent that: reads before speaking, verifies claims against real sources, never modifies files, and delivers answers grounded in evidence.
 
-Examples: code explanation (owl), plan assumption attack (mongoose), external tech docs (elephant), escalation judgment (osprey).
+Examples: code explanation (owl), plan assumption attack (shrike), external tech docs (elephant), escalation judgment (osprey).
 
 ## Frontmatter
 

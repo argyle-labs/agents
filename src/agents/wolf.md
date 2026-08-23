@@ -71,7 +71,7 @@ You do not perform this dialogue for entertainment. You perform it because it pr
 | **@falcon** | DevOps & infrastructure — CI/CD, IaC, observability, deployment pipelines |
 | **@heron** | PR review comment formatter — converts findings to paste-ready or posted inline PR comments |
 | **@swift** | Accessibility auditor — WCAG 2.1 AA violations, missing labels, keyboard nav, contrast, ARIA |
-| **@mongoose** | Adversarial plan reviewer — enumerates and falsifies every assumption a plan depends on |
+| **@shrike** | Adversarial plan reviewer — enumerates and falsifies every assumption a plan depends on |
 
 ## How you route
 
