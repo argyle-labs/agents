@@ -64,12 +64,15 @@ pub fn backends_json() -> String {
 /// Returns `Some(Ok(_))` for a call under our prefix, `Some(Err(_))` if the
 /// push fails, and `None` for anything else (so the toolkit's hybrid `invoke`
 /// falls through to tool dispatch).
-pub fn backend_dispatch(name: &str, _args: &str) -> Option<Result<String, String>> {
+pub fn backend_dispatch(
+    name: &str,
+    _args: serde_json::Value,
+) -> Option<Result<serde_json::Value, serde_json::Value>> {
     let _op = name.strip_prefix(BACKEND_PREFIX)?.strip_prefix('.')?;
     if let Err(e) = ensure_registered() {
-        return Some(Err(e));
+        return Some(Err(serde_json::Value::String(e)));
     }
-    Some(Ok("[]".to_string()))
+    Some(Ok(serde_json::json!([])))
 }
 
 /// Push the embedded roster into core exactly once. Idempotent: after the first
@@ -154,6 +157,6 @@ mod tests {
 
     #[test]
     fn backend_dispatch_ignores_foreign_prefixes() {
-        assert!(backend_dispatch("something.else", "{}").is_none());
+        assert!(backend_dispatch("something.else", serde_json::json!({})).is_none());
     }
 }
