@@ -39,7 +39,7 @@ Every agent must reference the correct canonical docs — no inline re-definitio
 - **Confirm-fix agents** (bear, ferret, ibis, swift, jackdaw, magpie, wren): Workflow references `/survey-confirm-fix` skill; `TodoWrite, TodoRead` in tools
 - **Audit agents** (viper, hound, otter, shrew, falcon, kestrel): Report format cites `audit-report-agent.md`; `TodoWrite, TodoRead` in tools
 - **Coding agents** (crow, fox, spider): Delegation or Rules references `CODING_RULES.md`
-- **Read-only agents** (owl, hound, otter, mongoose, kestrel, elephant, osprey): Rules references `TOOL_RULES.md` read-only section; no `Write` or `Edit` in tools
+- **Read-only agents** (owl, hound, otter, shrike, kestrel, elephant, osprey): Rules references `TOOL_RULES.md` read-only section; no `Write` or `Edit` in tools
 
 **For every agent:**
 - Agents that prioritize findings → reference `SEVERITY_RUBRIC.md`, no inline level definitions
