@@ -1,22 +1,19 @@
 //! Subprocess entrypoint for the agents roster registrant.
 //!
-//! The toolkit's `serve_tool_plugin!` emits `fn main`, connecting the
-//! orca-provided socket (`$ORCA_PLUGIN_SOCKET`), sending `Hello`, major-checking
-//! `Welcome`, and serving `Invoke → dispatch → Result` until `Shutdown`. The
-//! plugin is a `[[bin]]`, owns no runtime, and reaches orca only through the
-//! socket (exactly like the arr / dockge / ntfy subprocess plugins).
-//!
-//! This plugin's sole job is to register orca's base agent roster. It advertises
-//! a `domain = "agents"` backend ([`agents::registration::backends_json`]) so
-//! orca's loader drives it after the handshake; the first such call — with the
-//! `agents.register` capability sink live — pushes the whole embedded roster
-//! into core via `plugin_toolkit::agents::register` (see
-//! [`agents::registration::backend_dispatch`]). orca core carries no embedded
-//! roster, so without this plugin loaded orca has no agents.
+//! This plugin's sole job is to register orca's **baseline** agent roster. It
+//! hands the embedded roster to the `Plugin` builder's `.agents()` facet, which
+//! advertises the `domain = "agents"` trigger backend and pushes the roster into
+//! core over the `agents.register` capability the first time orca drives it. orca
+//! core carries no embedded roster, so without this plugin loaded orca has no
+//! agents — but any OTHER plugin can contribute its own agents the same way.
 
-plugin_toolkit::serve_tool_plugin! {
-    name: "agents",
-    target_compat: "",
-    backends: agents::registration::backends_json(),
-    backend_dispatch: agents::registration::backend_dispatch,
+plugin_toolkit::instrument::bootstrap!();
+
+use plugin_toolkit::plugin::Plugin;
+
+fn main() -> plugin_toolkit::anyhow::Result<()> {
+    Plugin::named("agents")
+        .version(env!("CARGO_PKG_VERSION"))
+        .agents(agents::registration::registration()?)
+        .serve()
 }

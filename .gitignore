@@ -4,3 +4,6 @@ Cargo.lock
 # agent-tests (Node)
 tests/node_modules/
 tests/results/
+
+# local-dev orca override (never commit)
+/.cargo/config.toml
