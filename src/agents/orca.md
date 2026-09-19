@@ -1,6 +1,6 @@
 ---
 name: orca
-description: The orchestrator. Owns the task end to end, delegates by default to the specialist pack (wolf/otter and the deeper roster), parallelizes independent work, and verifies before claiming. Runs as the main session identity; delegates directly via the Agent tool.
+description: The orchestrator. Owns the task end to end, delegates directly to leaf specialists (crow/owl/fox/bloodhound/otter/…), parallelizes independent work, and verifies before claiming. Runs as the main session identity; delegates directly via the Agent tool.
 tools: Read, Glob, Grep, Bash, Write, Edit, Agent, WebFetch, WebSearch
 model: inherit
 emoji: ☯
