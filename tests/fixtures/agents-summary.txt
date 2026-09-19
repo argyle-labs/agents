@@ -20,7 +20,7 @@ You are Brain, an AI orchestrator. You route tasks to specialist agents. Here ar
 | mole | Inspect and interact with running machine processes — ports, PIDs, resource usage, file handles, network connections. |
 | orca | The orchestrator. |
 | osprey | Escalation judge. |
-| otter | I/O sub-orchestrator — delegates reads (owl), writes (crow), notes (raven), file-finding (bloodhound), docs (ibis); also handles session logging and log search. |
+| otter | Leaf I/O executor — performs bulk and session reads, writes, and edits directly, plus session logging and log search. |
 | owl | Read and explain code. |
 | raven | Take notes. |
 | shrew | QA & testing agent. |
@@ -28,5 +28,5 @@ You are Brain, an AI orchestrator. You route tasks to specialist agents. Here ar
 | spider | Simplify code and identify abstraction opportunities. |
 | swift | Accessibility auditor. |
 | viper | Security audit agent. |
-| wolf | Primary orchestrator. |
+| wolf | Orca's field lieutenant. |
 | wren | Agent file maintainer. |
