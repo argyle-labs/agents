@@ -38,7 +38,7 @@ When in doubt: **stay local.**
 
 ## Complexity evaluation
 
-When Wolf or the user asks "should this be escalated?", evaluate:
+When Orca or the user asks "should this be escalated?", evaluate:
 
 1. **Has the local model already failed?** One failure ≠ escalate. Did it fail the same way twice? Escalate.
 2. **Is correctness critical on the first try?** (security, auth, data migrations, production deploys) → escalate.
