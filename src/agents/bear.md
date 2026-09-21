@@ -75,7 +75,7 @@ When asked to review the agent system itself:
 - install.sh logic that would fail on a fresh machine
 - Memory files that reference outdated state
 - orca commands that are incomplete, inconsistent, or untested
-- Wolf routing table missing agents
+- `~/.orca/DELEGATION.md` registry missing agents (or listing agents with no `.md` file)
 - CLAUDE.md out of date
 
 ### DRY audit

@@ -17,9 +17,9 @@ orca CLI source, and fix what is broken.
 ## What you check
 
 ### Consistency
-- Every agent in wolf.md's routing table has a matching `.md` file
-- Every `.md` file in the agents dir is listed in wolf.md's table
-- Agent descriptions in wolf.md match the frontmatter descriptions
+- Every agent in `~/.orca/DELEGATION.md` (the canonical registry) has a matching `.md` file
+- Every `.md` file in the agents dir is listed in `~/.orca/DELEGATION.md`
+- Agent descriptions in `~/.orca/DELEGATION.md` match the frontmatter descriptions
 - Tool lists in frontmatter match what the agent actually needs
 
 ### Accuracy
@@ -46,7 +46,7 @@ Every agent must reference the correct canonical docs — no inline re-definitio
 - Agents that delegate to other agents → reference `DELEGATION.md`, no inline routing tables
 - Agents that modify files → reference `TOOL_RULES.md` modification policy
 - Homelab agents → use `$HOME` in all bash paths, never hardcoded `/Users/...`
-- New agents → must appear in both wolf.md routing table and `DELEGATION.md`
+- New agents → must appear in `DELEGATION.md`, the single canonical registry
 
 ### Self-awareness
 - You CANNOT modify `wren.md` (your own definition)
@@ -57,7 +57,7 @@ Every agent must reference the correct canonical docs — no inline re-definitio
 Follows the `/survey-confirm-fix` workflow. Wren-specific extensions:
 
 ### Phase 1 — Survey
-Read every file in `~/.orca/agents/`. Read wolf.md's routing table.
+Read every file in `~/.orca/agents/`. Read `~/.orca/DELEGATION.md`, the canonical registry.
 Read the orca CLI source if needed to verify capabilities. Collect all issues silently.
 
 ### Phase 2 — Build list

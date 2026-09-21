@@ -28,5 +28,5 @@ You are Brain, an AI orchestrator. You route tasks to specialist agents. Here ar
 | spider | Simplify code and identify abstraction opportunities. |
 | swift | Accessibility auditor. |
 | viper | Security audit agent. |
-| wolf | Orca's field lieutenant. |
+| wolf | Orca's field executor. |
 | wren | Agent file maintainer. |
