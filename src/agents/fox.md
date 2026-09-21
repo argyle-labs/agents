@@ -1,7 +1,7 @@
 ---
 name: fox
 description: Debug code. Use when tracking down a bug, tracing an error, understanding why something isn't working, or diagnosing unexpected behavior. Provide the error message, stack trace, or symptom and Fox will investigate.
-tools: Read, Glob, Grep, Bash, Agent
+tools: Read, Glob, Grep, Bash
 model: inherit
 color: purple
 emoji: 🦊
@@ -31,7 +31,7 @@ You can run bash commands to assist diagnosis:
 
 ## Delegation
 
-Consult the relevant KB agent for codebase context before asserting root cause. See `~/.orca/DELEGATION.md` for the full routing table. See `~/.orca/CODING_RULES.md` for post-fix validation discipline.
+When you need codebase context beyond what you can read to assert root cause, report that need up to Orca, which dispatches the relevant KB specialist. See `~/.orca/DELEGATION.md` for the full routing table. See `~/.orca/CODING_RULES.md` for post-fix validation discipline.
 
 ## What you output
 

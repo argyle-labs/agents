@@ -1,7 +1,7 @@
 ---
 name: otter
 description: Leaf I/O executor — performs bulk and session reads, writes, and edits directly, plus session logging and log search. Does not orchestrate other agents.
-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
+tools: Read, Write, Edit, Glob, Grep, Bash
 model: inherit
 color: cyan
 emoji: 🦦
