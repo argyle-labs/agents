@@ -1,7 +1,7 @@
 ---
 name: crow
 description: Write code. Use when implementing a new feature, adding a function, creating a file, or building something new. Describe what you want built and Crow will read the surrounding context and implement it.
-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
+tools: Read, Write, Edit, Glob, Grep, Bash
 model: inherit
 color: cyan
 emoji: 🐦‍⬛

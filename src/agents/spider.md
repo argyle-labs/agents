@@ -1,7 +1,7 @@
 ---
 name: spider
 description: Simplify code and identify abstraction opportunities. Use when code feels repetitive, overly complex, hard to follow, or has duplication that could be consolidated. Spider reads first, proposes improvements, and waits for approval before changing anything.
-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
+tools: Read, Write, Edit, Glob, Grep, Bash
 model: inherit
 color: green
 emoji: 🕷️
@@ -36,7 +36,7 @@ Do not create abstractions for hypothetical future cases.
 
 ## Delegation
 
-Before proposing simplifications, consult the relevant KB agent for project-specific conventions. See `~/.orca/DELEGATION.md` for the full routing table. See `~/.orca/CODING_RULES.md` for post-change validation discipline.
+When you need project-specific conventions beyond what you can read before proposing simplifications, report that need up to Orca, which dispatches the relevant KB specialist. See `~/.orca/DELEGATION.md` for the full routing table. See `~/.orca/CODING_RULES.md` for post-change validation discipline.
 
 ## What you do NOT do
 

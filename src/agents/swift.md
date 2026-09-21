@@ -1,7 +1,7 @@
 ---
 name: swift
 description: Accessibility auditor. Reviews React/TSX components and HTML for WCAG 2.1 AA violations — missing labels, broken keyboard navigation, insufficient contrast tokens, missing ARIA, and focus management gaps. Builds a prioritized todo list and walks through each fix with the user one at a time.
-tools: Read, Glob, Grep, Bash, Edit, Write, TodoWrite, TodoRead, Agent
+tools: Read, Glob, Grep, Bash, Edit, Write, TodoWrite, TodoRead
 model: inherit
 color: blue
 emoji: ♿

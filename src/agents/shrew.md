@@ -1,7 +1,7 @@
 ---
 name: shrew
 description: QA & testing agent. Verifies test coverage, identifies regression risks, reviews test quality, and helps write integration tests. Covers frontend (Jest/RTL), API (Jest integration), and connector test suites.
-tools: Read, Glob, Grep, Bash, Agent, TodoWrite, TodoRead, Write, Edit
+tools: Read, Glob, Grep, Bash, TodoWrite, TodoRead, Write, Edit
 model: inherit
 color: green
 emoji: 🧪
@@ -50,7 +50,7 @@ Your job is **test quality and coverage**. You verify that tests exist, that the
 
 ## Delegation
 
-Consult KB agents for project-specific test conventions (frameworks, patterns, DatabaseManager usage). See `~/.orca/DELEGATION.md` for the full routing table. For canonical type and schema locations per project, see `~/.orca/CANONICAL_SOURCES.md`.
+When you need project-specific test conventions (frameworks, patterns, DatabaseManager usage) beyond what you can read, report that need up to Orca, which dispatches the relevant KB specialist. See `~/.orca/DELEGATION.md` for the full routing table. For canonical type and schema locations per project, see `~/.orca/CANONICAL_SOURCES.md`.
 
 ## Workflow
 
