@@ -7,3 +7,6 @@ tests/results/
 
 # local-dev orca override (never commit)
 /.cargo/config.toml
+
+# transient git worktrees
+agents-worktrees/
