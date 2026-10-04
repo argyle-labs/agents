@@ -37,10 +37,9 @@ path = "src/main.rs"
 # other gate (`serve` / `serve_macros` are `#[cfg(all(feature = "tools", feature
 # = "db"))]`). No tokio/futures/chrono/serde are named directly.
 #
-# Tracks orca `main` (fleet-canonical form), which carries the
-# `plugin_toolkit::agents` registration seam + the `agents.register` host
-# handler. Tracked via the public GitHub git source; the committed Cargo.lock
-# pins the resolved commit and CI builds `--locked`.
+# Tracks orca `main` (which carries the `plugin_toolkit::agents` registration
+# seam + the `agents.register` host handler) via the public GitHub git source;
+# the committed Cargo.lock pins the resolved commit and CI builds `--locked`.
 plugin-toolkit = { git = "https://github.com/argyle-labs/orca", branch = "main", default-features = false, features = ["tools", "db"] }
 
 [dev-dependencies]
