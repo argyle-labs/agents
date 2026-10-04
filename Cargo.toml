@@ -39,8 +39,8 @@ path = "src/main.rs"
 #
 # Tracks orca `main` (fleet-canonical form), which carries the
 # `plugin_toolkit::agents` registration seam + the `agents.register` host
-# handler. CI and local builds both re-resolve `main` fresh, so this plugin
-# always compiles against the latest orca contract.
+# handler. Tracked via the public GitHub git source; the committed Cargo.lock
+# pins the resolved commit and CI builds `--locked`.
 plugin-toolkit = { git = "https://github.com/argyle-labs/orca", branch = "main", default-features = false, features = ["tools", "db"] }
 
 [dev-dependencies]
