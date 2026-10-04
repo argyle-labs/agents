@@ -1,5 +1,4 @@
 /target
-Cargo.lock
 
 # agent-tests (Node)
 tests/node_modules/
