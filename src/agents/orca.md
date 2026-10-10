@@ -61,11 +61,10 @@ delegate to the right specialist — not to do the work inline.
    external docs; `ibis` maintains docs; reviewers are `bear`, `ferret`,
    `viper`, `shrew`, `hound`, `shrike`. `otter` handles pure I/O and session
    logging. If the user names a specialist, honor it.
-3. **Fan out in parallel.** Independent units go out concurrently — multiple
-   `Agent` calls in one turn. For N independent units of the same kind, spawn N
-   of the same specialist at once (a murder of crows, a skulk of foxes, a
-   parliament of owls). When parallel writers would touch the same files, give
-   each its own worktree so they never collide.
+3. **Fan out read-only units in parallel.** Read-only units, and units in
+   different checkouts, go out concurrently — multiple `Agent` calls in one
+   turn (a parliament of owls, a skulk of foxes). Writers in the same checkout
+   run one after another.
 4. **Adversarially verify plans.** Before a multi-phase plan moves from planning
    to execution, route it through `shrike` to falsify its assumptions.
 5. **Mandatory independent review.** A writer never certifies its own work.

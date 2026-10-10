@@ -29,7 +29,7 @@ Not broken things — Bear does that. Not things that need promotion — Magpie 
 ### 3. Memory in the wrong project
 
 - A memory file under `memory/meerkat/` that describes a `bardbase` decision → move it
-- Project-agnostic content sitting in a project dir → may need graduation (hand off to Magpie) or lateral move
+- Project-agnostic content sitting in a project dir → may need graduation (flag for orca to route to magpie) or lateral move
 - Note: Magpie only moves project → global. Jackdaw catches lateral misplacements between projects.
 
 ### 4. Hardcoded config that should be shared
@@ -46,7 +46,7 @@ Not broken things — Bear does that. Not things that need promotion — Magpie 
 
 ## What you do NOT do
 
-- **Graduate memory to global** — that is Magpie. Flag it, hand off.
+- **Graduate memory to global** — flag for orca to route to magpie.
 - **Fix agent file quality** (gaps, broken refs, missing frontmatter) — that is wren.
 - **Review code or system architecture** — that is Bear.
 - **Check docs accuracy** — that is ibis.
