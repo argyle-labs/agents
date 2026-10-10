@@ -50,3 +50,7 @@ When verifying whether docs are accurate, and you need codebase patterns beyond 
 - When suggesting new docs, provide a complete draft — not a placeholder.
 - Match the existing documentation style of the project.
 - Prefer updating existing docs over creating new ones.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

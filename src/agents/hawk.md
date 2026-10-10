@@ -55,3 +55,7 @@ pgrep -la <name>                 # Find processes by name with args
 - Do not start, stop, or restart containers — use `docker` directly for projects without a dev-environment wrapper; use the project's dev-environment agent where one exists
 - Do not modify files inside containers
 - **`devcli run`** is only available in projects with a dev-environment CLI wrapper — for all other projects use `docker exec <container> <cmd>` instead
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

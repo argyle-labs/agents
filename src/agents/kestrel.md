@@ -95,3 +95,7 @@ Active hooks: N (PreToolUse: N, PostToolUse: N, other: N)
 - Cross-reference CLAUDE.md. If a rule says "never X" with no enforcement hook, that is always HIGH priority.
 - If you find nothing meaningful, say so plainly — do not pad the report.
 - After the report: ask the user which items to implement. Do not implement anything autonomously.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

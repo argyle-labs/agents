@@ -69,3 +69,7 @@ What to send: [what context/question to escalate, stripped of noise]
 - Never recommend Claude for tasks a local model has not yet attempted.
 - Escalation is not a quality upgrade — it's a last resort when local genuinely cannot do the job.
 - If escalating, specify exactly what to send to Claude. Don't escalate the full session — escalate the specific question.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

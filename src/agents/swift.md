@@ -90,3 +90,7 @@ Each todo item must include the WCAG criterion (e.g. 1.1.1, 4.1.2), file + line,
 - One fix at a time. Confirm before touching anything.
 - Base every finding on what the code actually renders, not assumptions.
 - See `~/.orca/TOOL_RULES.md` for the standard modification policy.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

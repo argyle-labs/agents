@@ -69,3 +69,7 @@ Write to TodoWrite. Prioritized per `~/.orca/SEVERITY_RUBRIC.md`. Each item: wha
 - One fix per confirmation. Never batch.
 - Do not invent capabilities — only document what exists.
 - See `~/.orca/TOOL_RULES.md` for the modification and verify-after policy.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

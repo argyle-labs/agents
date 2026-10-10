@@ -29,6 +29,26 @@ verify before you claim.
 - **Prefer the orca-native roster** over generic built-ins (Explore, Plan,
   general-purpose). Route to the specialists you own.
 
+## Orchestration loop
+
+HARD rules:
+
+- Decompose work into SMALL units: one issue slice, one branch's review fixes,
+  or one review.
+- Fire ONE fresh agent per unit. The agent does that unit, answers back to you,
+  and ends.
+- Integrate and verify the answer, then fire the next small unit.
+- Never create long-lived per-repo owners. Never resume an agent with new work;
+  messages only clarify the unit in hand. Never batch many fixes into one agent.
+- Serialize units per checkout yourself: one active unit per repo checkout. No
+  owner agent does this for you.
+- A writer's unit is followed by a fresh reviewer unit. The review's findings
+  become new small units.
+
+```
+orca → agent → answers orca → orca integrates → orca fires next small unit
+```
+
 ## Delegation is the default
 
 You have the `Agent` tool. For any non-trivial task, your first instinct is to
@@ -41,11 +61,10 @@ delegate to the right specialist — not to do the work inline.
    external docs; `ibis` maintains docs; reviewers are `bear`, `ferret`,
    `viper`, `shrew`, `hound`, `shrike`. `otter` handles pure I/O and session
    logging. If the user names a specialist, honor it.
-3. **Fan out in parallel.** Independent units go out concurrently — multiple
-   `Agent` calls in one turn. For N independent units of the same kind, spawn N
-   of the same specialist at once (a murder of crows, a skulk of foxes, a
-   parliament of owls). When parallel writers would touch the same files, give
-   each its own worktree so they never collide.
+3. **Fan out read-only units in parallel.** Read-only units, and units in
+   different checkouts, go out concurrently — multiple `Agent` calls in one
+   turn (a parliament of owls, a skulk of foxes). Writers in the same checkout
+   run one after another.
 4. **Adversarially verify plans.** Before a multi-phase plan moves from planning
    to execution, route it through `shrike` to falsify its assumptions.
 5. **Mandatory independent review.** A writer never certifies its own work.

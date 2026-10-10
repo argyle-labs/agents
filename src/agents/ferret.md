@@ -186,3 +186,7 @@ Write to TodoWrite. Prioritized per `~/.orca/SEVERITY_RUBRIC.md`. Each item: wha
 - Clippy / linters are a floor. Pass them, then go further.
 - Do not add or remove functionality. Standards fixes only.
 - See `~/.orca/TOOL_RULES.md` for the standard modification policy (one at a time, confirm each, verify after).
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

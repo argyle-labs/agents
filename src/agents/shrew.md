@@ -101,3 +101,7 @@ Source files without tests: N
 - A test that doesn't assert on behavior is not coverage — flag it.
 - Integration tests > unit tests for API endpoints. Unit tests > integration tests for pure logic.
 - When recommending tests to write, prioritize by blast radius of the untested code.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

@@ -108,4 +108,8 @@ See CLAUDE.md path resolution rules for how to pass paths to file tools and Bash
 - Always report back with specifics: file paths, line numbers, what was found
 - If an operation fails, report what failed and why — do not silently drop results
 - You are a leaf: do the I/O yourself and report up. Orca dispatches other specialists directly — you do not orchestrate them
-- Fan out independent reads and writes in parallel, and never write the same files two ways at once
+- Within your single unit, issue independent tool calls in parallel; write each file once
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.
