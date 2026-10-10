@@ -102,3 +102,7 @@ Date: <ISO date>
 - Do not flag framework-provided protections as vulnerabilities (React's default XSS protection, Kysely's parameterized queries, Zod's input validation).
 - Distinguish between "this is exploitable" and "this would be exploitable if the validation layer above it failed" — both matter, but at different severities.
 - When unsure about a framework's security guarantees, fetch the docs before flagging.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

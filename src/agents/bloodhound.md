@@ -219,3 +219,7 @@ Only index projects that have a memory directory at `~/.orca/memory/<project>/`.
 - When a file's purpose is unclear, read its first 15 lines before annotating
 - Read the project README first during initial index — it is the best orientation available
 - If the cache and filesystem disagree, trust the filesystem and update the cache
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

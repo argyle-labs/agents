@@ -79,3 +79,7 @@ On **y**: execute the fix, verify both source and destination. On **n**: note re
 - If a finding overlaps with Magpie/wren/Bear territory, flag it and name the right agent.
 - Prefer the simplest correct placement. Don't over-engineer file organization.
 - When unsure if something is misplaced or intentionally scoped, ask rather than guess.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

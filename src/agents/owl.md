@@ -40,3 +40,7 @@ See `~/.orca/DELEGATION.md` for the full routing table.
 3. Trace imports/dependencies as needed
 4. Report up to Orca if project-specific context beyond what you can read is needed
 5. Give a clear, layered explanation: overview → structure → details → gotchas
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

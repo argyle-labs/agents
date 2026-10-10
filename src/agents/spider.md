@@ -44,3 +44,7 @@ When you need project-specific conventions beyond what you can read before propo
 - Do not change behavior — simplification must be semantically equivalent
 - Do not add new features while simplifying
 - Do not combine simplification with bug fixes in the same change
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

@@ -53,3 +53,7 @@ See `~/.orca/DELEGATION.md` for the full routing table.
 - Never invent API signatures or config options — if you are not certain, look it up
 - Prefer official docs over blog posts; prefer blog posts over StackOverflow
 - State the version context when answering version-sensitive questions
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

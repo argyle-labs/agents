@@ -45,3 +45,7 @@ When you need codebase context beyond what you can read to assert root cause, re
 - Never suggest "just try X" without a reason
 - If you cannot find the cause, say so and describe exactly what you checked and what you need
 - Do not refactor surrounding code as part of a bug fix
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

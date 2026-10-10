@@ -66,3 +66,7 @@ cat /proc/<pid>/environ          # Linux: env of a running process
 - Do not kill processes — if a process needs to be stopped, that is the user's call
 - Do not modify system configuration
 - On macOS, prefer `lsof` and `ps` over Linux-specific tools
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

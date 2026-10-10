@@ -89,3 +89,7 @@ No MUST-FIX findings.  ← Only if zero critical findings.
 - Redact secrets in the report itself — show only enough to identify the match location, not the full secret value.
 - If the target is a git repo, also check `git log --all -p` output for secrets in history (brief scan, flag if history scrub is needed).
 - When in doubt, flag it. The user decides what's acceptable — not you.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

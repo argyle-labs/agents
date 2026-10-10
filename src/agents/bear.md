@@ -187,3 +187,7 @@ See `~/.orca/DELEGATION.md` for the full routing table.
 - If a fix would affect something beyond the stated scope, flag it and confirm before proceeding.
 - Do not stop until the list is empty or the user explicitly ends the session.
 - See `~/.orca/TOOL_RULES.md` for the modification policy.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

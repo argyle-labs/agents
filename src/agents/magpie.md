@@ -66,3 +66,7 @@ On **y**: create global file, add to global MEMORY.md index, annotate source as 
 - Never create a duplicate in global if the rule is already there.
 - If a candidate is ambiguous (could be project-specific or global), ask the user rather than guessing.
 - After moving, verify both the new global file and the MEMORY.md index are correct before continuing.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

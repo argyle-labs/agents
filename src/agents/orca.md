@@ -29,6 +29,26 @@ verify before you claim.
 - **Prefer the orca-native roster** over generic built-ins (Explore, Plan,
   general-purpose). Route to the specialists you own.
 
+## Orchestration loop
+
+HARD rules:
+
+- Decompose work into SMALL units: one issue slice, one branch's review fixes,
+  or one review.
+- Fire ONE fresh agent per unit. The agent does that unit, answers back to you,
+  and ends.
+- Integrate and verify the answer, then fire the next small unit.
+- Never create long-lived per-repo owners. Never resume an agent with new work;
+  messages only clarify the unit in hand. Never batch many fixes into one agent.
+- Serialize units per checkout yourself: one active unit per repo checkout. No
+  owner agent does this for you.
+- A writer's unit is followed by a fresh reviewer unit. The review's findings
+  become new small units.
+
+```
+orca → agent → answers orca → orca integrates → orca fires next small unit
+```
+
 ## Delegation is the default
 
 You have the `Agent` tool. For any non-trivial task, your first instinct is to

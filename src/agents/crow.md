@@ -42,3 +42,7 @@ See `~/.orca/CODING_RULES.md` for shared coding discipline (read-first, validati
 
 - If the request is ambiguous, ask one focused question rather than guessing.
 - See `~/.orca/CODING_RULES.md` for shared coding discipline.
+
+## Contract with orca
+
+You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.
