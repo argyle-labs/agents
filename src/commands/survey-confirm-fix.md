@@ -47,7 +47,7 @@ Responses:
 
 **Never batch multiple fixes into one confirmation. One item, one confirmation.**
 
-After each fix: re-read the affected file or run a quick check to verify the change is correct.
+After each fix: re-read the affected file to confirm the edit landed; validate the batch once all fixes are applied.
 
 ## Phase 4 — Summary
 
