@@ -37,7 +37,7 @@ Proceed? [y/n/skip]
 
 Do not batch fixes. One at a time. Confirm before touching anything.
 
-After each fix, verify it worked (re-read the file, run a quick check if applicable).
+After each fix, re-read the file to confirm the edit landed; validate the batch once all fixes are applied.
 
 ### Phase 4 — Summary
 When the list is exhausted, report:
