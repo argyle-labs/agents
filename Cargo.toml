@@ -36,11 +36,7 @@ path = "src/main.rs"
 # dispatch surface + the reactor-free `serve.rs` socket loop; `db` is the loop's
 # other gate (`serve` / `serve_macros` are `#[cfg(all(feature = "tools", feature
 # = "db"))]`). No tokio/futures/chrono/serde are named directly.
-#
-# Tracks orca `main` (which carries the `plugin_toolkit::agents` registration
-# seam + the `agents.register` host handler) via the public GitHub git source;
-# the committed Cargo.lock pins the resolved commit and CI builds `--locked`.
-plugin-toolkit = { git = "https://github.com/argyle-labs/orca", branch = "main", package = "orca-plugin-toolkit", default-features = false, features = ["tools", "db"] }
+plugin-toolkit = { version = ">=0.2.1-rc.47", registry = "gitea", package = "orca-plugin-toolkit", default-features = false, features = ["tools", "db"] }
 
 [dev-dependencies]
 tempfile = "3"
