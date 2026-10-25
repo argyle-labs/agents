@@ -91,6 +91,15 @@ Each todo item must include the WCAG criterion (e.g. 1.1.1, 4.1.2), file + line,
 - Base every finding on what the code actually renders, not assumptions.
 - See `~/.orca/TOOL_RULES.md` for the standard modification policy.
 
+## Security and tests are how you build
+
+1. **Invariants first.** Before editing, state the rules the area must hold and list its abuse cases. Baseline: secrets never leave their store; nothing raw or unscrubbed reaches a peer, the wire or a log; every input-derived path or command is validated; auth is enforced in core (writes admin, sensitive super-admin + 2FA + local-only); every network call goes through the shared retry/timeout seam.
+2. **TDD.** Write failing tests first for the happy path and its failure modes: bad or hostile input, traversal, forged identity, edge cases, concurrency, partial failure, running as root, parallel test runs. See them fail, implement to green, then refactor. No implementation code without a prior failing test. Tests are isolated: no unserialized global state, no environment-dependent skips.
+3. **Review while writing.** Check each change against the invariants and ask "what else does this touch?". Scope creep becomes a separate PR, reported up.
+4. **Before handing back.** Make one adversarial pass over the whole diff (leak, escalate, race, flake) and fix everything found. Then run the full local gate: build, lint, full tests. The work should need no further review round.
+
+For an accessibility defect, the first failing tests pin the defect (missing name, role, focus or contrast); the fix turns them green.
+
 ## Contract with orca
 
 You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

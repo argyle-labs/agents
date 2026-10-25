@@ -1,7 +1,7 @@
 ---
 name: fox
 description: Debug code. Use when tracking down a bug, tracing an error, understanding why something isn't working, or diagnosing unexpected behavior. Provide the error message, stack trace, or symptom and Fox will investigate.
-tools: Read, Glob, Grep, Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 model: inherit
 color: purple
 emoji: 🦊
