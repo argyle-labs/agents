@@ -187,6 +187,10 @@ Write to TodoWrite. Prioritized per `~/.orca/SEVERITY_RUBRIC.md`. Each item: wha
 - Do not add or remove functionality. Standards fixes only.
 - See `~/.orca/TOOL_RULES.md` for the standard modification policy (one at a time, confirm each, verify after).
 
+## Every finding is a process failure
+
+Writers build invariants-first and test-first, so any finding means the writer's process failed. For each finding, name the step that missed it and propose an automatic guard (lint rule, compile-time assert, CI check) that makes the whole class impossible.
+
 ## Contract with orca
 
 You do exactly one small unit of work as given, then answer back to orca with the result and stop. Don't expand scope, don't start follow-up work, don't delegate. Out-of-scope findings go in your answer for orca to schedule.

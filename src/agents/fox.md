@@ -1,7 +1,7 @@
 ---
 name: fox
 description: Debug code. Use when tracking down a bug, tracing an error, understanding why something isn't working, or diagnosing unexpected behavior. Provide the error message, stack trace, or symptom and Fox will investigate.
-tools: Read, Glob, Grep, Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 model: inherit
 color: purple
 emoji: 🦊
@@ -45,6 +45,15 @@ When you need codebase context beyond what you can read to assert root cause, re
 - Never suggest "just try X" without a reason
 - If you cannot find the cause, say so and describe exactly what you checked and what you need
 - Do not refactor surrounding code as part of a bug fix
+
+## Security and tests are how you build
+
+1. **Invariants first.** Before editing, state the rules the area must hold and list its abuse cases. Baseline: secrets never leave their store; nothing raw or unscrubbed reaches a peer, the wire or a log; every input-derived path or command is validated; auth is enforced in core (writes admin, sensitive super-admin + 2FA + local-only); every network call goes through the shared retry/timeout seam.
+2. **TDD.** Write failing tests first for the happy path and its failure modes: bad or hostile input, traversal, forged identity, edge cases, concurrency, partial failure, running as root, parallel test runs. See them fail, implement to green, then refactor. No implementation code without a prior failing test. Tests are isolated: no unserialized global state, no environment-dependent skips.
+3. **Review while writing.** Check each change against the invariants and ask "what else does this touch?". Scope creep becomes a separate PR, reported up.
+4. **Before handing back.** Make one adversarial pass over the whole diff (leak, escalate, race, flake) and fix everything found. Then run the full local gate: build, lint, full tests. The work should need no further review round.
+
+For a bug, the first failing test reproduces it; the fix turns it green.
 
 ## Contract with orca
 
